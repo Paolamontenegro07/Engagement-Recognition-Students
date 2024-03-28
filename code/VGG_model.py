@@ -116,12 +116,12 @@ class EmotionRecognition:
     if isfile(join(SAVE_DIRECTORY, SAVE_MODEL_FILENAME+'.index')):
       self.model.load(join(SAVE_DIRECTORY, SAVE_MODEL_FILENAME))
       print('[+] Model ;loaded from ' + SAVE_MODEL_FILENAME)
-      print '********* The test set accuracy is: '
+      print ('********* The test set accuracy is: ')
 
       perfval = self.model.evaluate(self.dataset.images_valid, self.dataset._labels_valid)
       perftest = self.model.evaluate(self.dataset.images_test, self.dataset.labels_test)
 
-      print perfval, perftest
+      print (perfval, perftest)
 
       predictval = self.model.predict(self.dataset.images_valid)
       predicttest = self.model.predict(self.dataset.images_test)
@@ -132,9 +132,9 @@ class EmotionRecognition:
       return perftest
 
     else:
-      print '[-] The model is not found'
-      print '[-] The model is not found'
-      print '[-] The model is not found'
+      print ('[-] The model is not found')
+      print ('[-] The model is not found')
+      print ('[-] The model is not found')
       return 0.0
 
     # if isfile(join(SAVE_DIRECTORY, SAVE_MODEL_FILENAME+'.index')):

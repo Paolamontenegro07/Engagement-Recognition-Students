@@ -117,16 +117,34 @@ class EmotionRecognition:
     if isfile(join(SAVE_DIRECTORY, SAVE_MODEL_FILENAME_TF + '.index')):
       self.model.load(join(SAVE_DIRECTORY, SAVE_MODEL_FILENAME_TF))
       print('[+] Model ;loaded from ' + SAVE_MODEL_FILENAME_TF)
-      print '********* The test set accuracy is: '
+      print ('********* The test set accuracy is: ')
 
       perfval = self.model.evaluate(self.dataset.images_valid, self.dataset._labels_valid)
       perftest = self.model.evaluate(self.dataset.images_test, self.dataset.labels_test)
       
       # just for testing on sample data
-      print perftest
+      #print (erftest)
+      print (perftest)
+      
 
       predictval = self.model.predict(self.dataset.images_valid)
       predicttest = self.model.predict(self.dataset.images_test)
+
+    # if __name__ == "__main__":
+    #   network = EmotionRecognition()
+    #   if sys.argv[1] == 'train':
+    #     network.start_training()
+    #     network.save_model()
+    #     network.load_model()
+    #   elif sys.argv[1] == 'test':
+    #     network.load_saved_dataset()
+    #     network.build_network()
+    #     perftest = network.load_model()
+    #     print("Test set accuracy:", perftest)  # Agregar esta línea
+    #   else:
+    #     show_usage()
+
+
       
       #just for testing on sample data
       #np.save('val_f.npy', predictval)
@@ -135,9 +153,9 @@ class EmotionRecognition:
       return perftest
 
     else:
-      print '[-] The model is not found'
-      print '[-] The model is not found'
-      print '[-] The model is not found'
+      print ('[-] The model is not found')
+      print ('[-] The model is not found')
+      print ('[-] The model is not found')
       return 0.0
 
     # if isfile(join(SAVE_DIRECTORY, SAVE_MODEL_FILENAME+'.index')):

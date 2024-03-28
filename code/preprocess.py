@@ -83,7 +83,7 @@ def convert_csv_to_img(path):
 
 if __name__ == "__main__":
 
-    print ">>>preprocessing<<<"
+    print (">>>preprocessing<<<")
 
     cv_img = []
     cv_label = []
