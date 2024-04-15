@@ -1,1 +1,32 @@
 
+conda create --name fer_dl python= 3.9
+conda deactivate
+conda activate fer_dl
+
+conda install tensorflow
+conda install pandas
+conda install seaborn
+conda install imblearn
+conda config --add channels conda-forge
+conda install imbalanced-learn
+pip install tflearn
+pip install --upgrade Pillow
+conda install numpy
+
+Preprocesamiento de imágenes_
+
+# Place your images in the data directory
+cd C:\Users\adm\Google Drive\MASTER\CLASES\REPOSITORIO\MIC_IOT\proyecto_dl\Engagement-Recognition\code
+cd code/
+# Download and unzip the mmod_human_face_detector.dat file from "http://dlib.net/files/mmod_human_face_detector.dat.bz2"
+python preprocess.py
+- corrección de comillas en print
+- La biblioteca PIL (Python Imaging Library) no tiene el atributo 'ANTIALIAS'. 
+Esto podría ocurrir por una versión antigua de PIL, se revisado que 'ANTIALIAS' se ha cambiado a 'LANCZOS' en versiones más recientes de PIL.
+##modificación ANTIALIAS por LANCZOS
+ resized_crop = img_crop.resize((48, 48), Image.LANCZOS)
+
+python VGG_model.py train
+
+- corrección de comillas en print
+python VGG_model.py test
